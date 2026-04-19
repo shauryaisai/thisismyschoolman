@@ -13,19 +13,20 @@ function Admissions() {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">Join the Shashi Public School family. We welcome students who are eager to learn, grow, and contribute positively to our community.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center relative pt-12 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-school-gold text-school-navy rounded-full flex items-center justify-center text-xl font-bold shadow-md">1</div>
+        {/* Steps - fixed overlap with mt-10 and overflow-visible */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 mt-10">
+          <div className="bg-white px-8 pb-8 pt-10 rounded-2xl shadow-sm border border-slate-200 text-center relative hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-school-gold text-school-navy rounded-full flex items-center justify-center text-xl font-bold shadow-md z-10">1</div>
             <h3 className="text-xl font-bold text-school-navy mb-3">Submit Registration</h3>
             <p className="text-slate-600 text-sm">Fill out the online inquiry form or collect the registration kit from the school reception.</p>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center relative pt-12 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-school-gold text-school-navy rounded-full flex items-center justify-center text-xl font-bold shadow-md">2</div>
+          <div className="bg-white px-8 pb-8 pt-10 rounded-2xl shadow-sm border border-slate-200 text-center relative hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-school-gold text-school-navy rounded-full flex items-center justify-center text-xl font-bold shadow-md z-10">2</div>
             <h3 className="text-xl font-bold text-school-navy mb-3">Entrance Assessment</h3>
             <p className="text-slate-600 text-sm">Candidates for Grade 1 and above will undergo a brief assessment to understand their academic level.</p>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center relative pt-12 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-school-gold text-school-navy rounded-full flex items-center justify-center text-xl font-bold shadow-md">3</div>
+          <div className="bg-white px-8 pb-8 pt-10 rounded-2xl shadow-sm border border-slate-200 text-center relative hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-school-gold text-school-navy rounded-full flex items-center justify-center text-xl font-bold shadow-md z-10">3</div>
             <h3 className="text-xl font-bold text-school-navy mb-3">Interaction & Enrollment</h3>
             <p className="text-slate-600 text-sm">A short interaction with parents followed by documentation and fee submission to confirm the seat.</p>
           </div>
@@ -55,15 +56,22 @@ function Admissions() {
             </div>
           </section>
 
-          <section className="flex flex-col justify-center items-center bg-slate-50 p-10 rounded-3xl border-2 border-dashed border-slate-300 text-center">
-            <div className="text-6xl mb-6">📄</div>
-            <h2 className="text-2xl font-bold text-school-navy mb-4">Ready to Apply?</h2>
-            <p className="text-slate-600 mb-8 max-w-md">
-              Download our comprehensive school prospectus for detailed information about our fees, policies, and detailed curriculum structure.
+          <section className="flex flex-col justify-center items-center bg-slate-50 p-10 rounded-3xl border-2 border-dashed border-slate-300 text-center gap-4">
+            <div className="text-6xl">📄</div>
+            <h2 className="text-2xl font-bold text-school-navy">Ready to Apply?</h2>
+            <p className="text-slate-600 max-w-md">
+              Download our comprehensive school prospectus for detailed information about our fees, policies, and curriculum structure.
             </p>
-            <button className="bg-school-navy text-school-white px-8 py-4 rounded-full font-bold hover:bg-school-gold hover:text-school-navy transition-colors shadow-md flex items-center gap-2">
-              <span>⬇️</span> Download Prospectus (PDF)
-            </button>
+            <a
+              href="/prospectus.pdf"
+              download
+              className="bg-school-navy text-school-white px-8 py-4 rounded-full font-bold hover:bg-school-gold hover:text-school-navy transition-colors shadow-md inline-flex items-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              Download Prospectus (PDF)
+            </a>
           </section>
         </div>
 
@@ -75,8 +83,10 @@ function Admissions() {
             <p className="text-school-white/90 text-lg font-medium max-w-xl">Get the official admission form for the upcoming academic session. Please print, fill out, and submit at the school reception.</p>
           </div>
           <div className="relative z-10 shrink-0">
-            <a href="/New-admission-form.pdf" download className="inline-flex bg-school-gold text-school-navy px-8 py-5 rounded-full font-black text-lg hover:bg-yellow-400 transition-all shadow-xl shadow-school-gold/30 items-center gap-3 animate-[pulse_2s_ease-in-out_infinite] hover:animate-none hover:scale-105 hover:-translate-y-1 whitespace-nowrap">
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <a href="/New-admission-form.pdf" download className="inline-flex bg-school-gold text-school-navy px-8 py-5 rounded-full font-black text-lg hover:bg-yellow-400 transition-all shadow-xl items-center gap-3 hover:scale-105 whitespace-nowrap">
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
               Download Admission PDF
             </a>
           </div>
